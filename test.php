@@ -41,6 +41,6 @@ try {
     echo $e->getMessage();
     throw $e;
 }
-echo "Time: " . (time() - $start) . "\n$i lines read";
+echo "Time: " . (time() - $start) . "\n$i lines read \n";
 echo "Start time: " . gmdate("Y-m-d H:i:s", $start) . "\n";
 echo "Current time: " . gmdate("Y-m-d H:i:s") . "\n";
