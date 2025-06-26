@@ -27,8 +27,7 @@ try {
         while (!feof($stream)) {
             $i++;
             $data = fgetcsv($stream, 0);
-            usleep(10000);
-            //            echo "$i\n";
+            usleep(10000); // Simulate some processing delay
         }
         if (!feof($stream)) {
             $error = error_get_last();
@@ -43,3 +42,5 @@ try {
     throw $e;
 }
 echo "Time: " . (time() - $start) . "\n$i lines read";
+echo "Start time: " . gmdate("Y-m-d H:i:s", $start) . "\n";
+echo "Current time: " . gmdate("Y-m-d H:i:s") . "\n";
