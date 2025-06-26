@@ -57,7 +57,14 @@ const instance = new aws.ec2.Instance("instance", {
     apt-get install -y git
     add-apt-repository ppa:ondrej/php
     apt-get update
-    apt-get install -y php8.2-cli composer
+    apt-get install -y php8.2-cli php8.2-xml
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+    rm composer-setup.php
+    cd /home/ubuntu
+    sudo -u ubuntu git clone https://github.com/alaress/R2-bug-poc.git
+    cd R2-bug-poc
+    sudo -u ubuntu composer install
     `,
     userDataReplaceOnChange: true,
     tags: {
