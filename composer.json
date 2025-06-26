@@ -1,0 +1,7 @@
+{
+  "require": {
+    "aws/aws-sdk-php": "3.337.3",
+    "ext-json": "*",
+    "vlucas/phpdotenv": "^5.6"
+  }
+}
